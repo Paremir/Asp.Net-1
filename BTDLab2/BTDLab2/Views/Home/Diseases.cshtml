@@ -1,0 +1,39 @@
+﻿@model IEnumerable<BTDLab2.Models.Disease>
+
+
+@{
+    ViewBag.Title = "Diseases";
+}
+<div class="maintext" align="center">
+    <h2>Таблица болезней</h2>
+
+    <p>
+        @Html.ActionLink("Создать болезнь", "CreateDisease")
+    </p>
+    <table class="table" border="10">
+        <tr>
+
+            <th>
+                Имя
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Изменить", "EditDisease", new { id = item.Id })
+                  
+                    @Html.ActionLink("Удалить", "DeleteDisease", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+

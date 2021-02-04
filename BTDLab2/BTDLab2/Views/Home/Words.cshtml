@@ -1,0 +1,41 @@
+﻿@model IEnumerable<BTDLab2.Models.Word>
+
+@{
+    ViewBag.Title = "Words";
+}
+<div class="maintext" align="center">
+    <h2>Таблица Слов</h2>
+
+    <p>
+        @Html.ActionLink("Создать слово", "CreateWord")
+    </p>
+    <table class="table" border="10">
+        <tr>
+
+            <th>
+                Слово
+            </th>
+            <th>
+                Болезнь
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Disease.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Изменить", "EditWord", new { id = item.Id })
+            @Html.ActionLink("Удалить", "DeleteWord", new { id = item.Id })
+        </td>
+    </tr>
+        }
+
+    </table>
+</div>

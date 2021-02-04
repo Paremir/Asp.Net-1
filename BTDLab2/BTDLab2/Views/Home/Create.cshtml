@@ -1,0 +1,36 @@
+﻿@model BTDLab2.Models.Character
+
+@{
+    ViewBag.Title = "Создание персонажа";
+}
+    <div class="maintext" align="center">
+        @using (Html.BeginForm())
+        {<h2>Создать персонажа</h2>
+            <fieldset>
+                @Html.LabelFor(model => model.Name, "Имя персонажа: ")
+                @Html.EditorFor(model => model.Name)
+                <br />
+                <br />
+                @Html.LabelFor(model => model.Name, "Роль персонажа: ")
+                @Html.DropDownListFor(model => model.RoleId, ViewBag.Roles as SelectList)
+                <br />
+                <br />
+                @Html.LabelFor(model => model.Name, "Слово персонажа: ")
+                @Html.DropDownListFor(model => model.WordId, ViewBag.Words as SelectList)
+                <br />
+                <br />
+                @Html.LabelFor(model => model.Name, "Место персонажа: ")
+                @Html.DropDownListFor(model => model.PlaceId, ViewBag.Places as SelectList)
+                <br />
+                <br />
+                <input type="submit" value="Добавить" />
+                <br />
+                <br />
+            </fieldset>
+        }
+
+
+    </div>
+<div class="maintext">
+    @Html.ActionLink("Вернуться назад", "Index")
+</div>

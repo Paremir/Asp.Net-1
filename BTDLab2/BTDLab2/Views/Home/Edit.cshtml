@@ -1,0 +1,38 @@
+﻿@model BTDLab2.Models.Character
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+    <div class="maintext" align="center">
+        @using (Html.BeginForm())
+        {<h2>Изменить персонажа</h2>
+            <fieldset>
+
+                @Html.HiddenFor(m => m.Id)
+                <p>
+                    @Html.LabelFor(m => m.Name, "Имя персонажа: ")
+                    @Html.EditorFor(m => m.Name)
+                    <br />
+                    <br />
+                    @Html.LabelFor(m => m.Name, "Роль персонажа: ")
+                    @Html.DropDownListFor(m => m.RoleId, ViewBag.Roles as SelectList)
+                    <br />
+                    <br />
+                    @Html.LabelFor(m => m.Name, "Слово персонажа: ")
+                    @Html.DropDownListFor(m => m.WordId, ViewBag.Words as SelectList)
+                    <br />
+                    <br />
+                    @Html.LabelFor(m => m.Name, "Место персонажа: ")
+                    @Html.DropDownListFor(m => m.PlaceId, ViewBag.Places as SelectList)
+                    <br />
+                    <br />
+                    <input type="submit" value=" Изменить " />
+                    <br />
+                    <br />
+            </fieldset>
+        }
+    </div>
+    <div class="maintext">
+        @Html.ActionLink("Вернуться назад", "Index")
+    </div>

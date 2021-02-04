@@ -1,0 +1,27 @@
+﻿@model BTDLab2.Models.Disease
+
+@{
+    ViewBag.Title = "CreateDisease";
+}
+
+    <div class="maintext">
+        <font align=" center">
+            @using (Html.BeginForm())
+            {
+                <h2>Создать болезнь</h2>
+                <fieldset>
+                    @Html.LabelFor(model => model.Name, "Имя болезни: ")
+                    @Html.EditorFor(model => model.Name)
+                    <br />
+                    <br />
+                    <input type="submit" value=" Добавить " />
+                    <br />
+                    <br />
+                </fieldset>
+            }
+        </font>
+        <div>
+            @Html.ActionLink("Вернуться назад", "Diseases")
+        </div>
+    </div>
+

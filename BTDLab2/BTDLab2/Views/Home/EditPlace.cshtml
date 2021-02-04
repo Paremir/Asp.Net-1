@@ -1,0 +1,26 @@
+﻿@model BTDLab2.Models.Place
+
+@{
+    ViewBag.Title = "EditPlace";
+}
+
+<div class="maintext" align="center">
+    @using (Html.BeginForm())
+    {
+        <h2>Изменить место</h2>
+        <fieldset>
+
+            @Html.HiddenFor(m => m.Id)
+            <p>
+                @Html.LabelFor(m => m.Name, "Название места: ")
+                @Html.EditorFor(m => m.Name)
+                <input type="submit" value="Изменить" />
+                <br />
+                <br />
+        </fieldset>
+    }
+
+</div>
+<div class="maintext">
+    @Html.ActionLink("Вернуться назад", "Places")
+</div>
